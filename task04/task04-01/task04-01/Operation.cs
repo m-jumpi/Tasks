@@ -8,7 +8,7 @@ namespace Operation
         {
             if (TrianglePresence(a, b, c))
             {
-                double p = a + b + c;
+                double p = (a + b + c)/2;
                 double s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
                 return s;
             }
@@ -24,7 +24,7 @@ namespace Operation
         {
             if (TrianglePresence(a))
             {
-                double p = 3 * a;
+                double p = (3 * a)/2;
                 double s = Math.Sqrt(p * (p - a) * (p - a) * (p - a));
                 return s;
             }
