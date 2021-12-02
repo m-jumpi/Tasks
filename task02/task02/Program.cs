@@ -18,11 +18,6 @@ class Program
     }
     public static void Main()
     {
-        Distance z;
-        //z.feet = 100;
-        //z.inch = 100;
-        Console.WriteLine(z);
-
         Distance a = new Distance(IntCheck("Please enter value of distance 'a' in inches: "));
         Distance b = new Distance(IntCheck("Please enter value of distance 'b' in inches: "));
         Distance c = new Distance((a.feet * 12 + a.inch) + (b.feet * 12 + b.inch));
