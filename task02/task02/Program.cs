@@ -4,42 +4,42 @@ class Program
 {
     public struct Distance
     {
-        public int inputInches;
         public int feet;
         public int inch;
 
-        public Distance(int inputInches)
+        public Distance(int input)
         {
-            this.inputInches = inputInches;
-            feet = (int)inputInches / 12;
-            inch = (int)inputInches % 12;
+            feet = (int)input / 12;
+            inch = (int)input % 12;
         }
 
-        public string Display()
-        {
-            return ($"{feet}' - {inch}\"");
-        }
+        public override string ToString() => $"{feet}' - {inch}\"";
 
     }
     public static void Main()
     {
-        Distance a = new Distance(intCheck("Please enter value of distance 'a' in inches: "));
-        Distance b = new Distance(intCheck("Please enter value of distance 'b' in inches: "));
-        Distance c = new Distance(a.inputInches + b.inputInches);
+        Distance z;
+        //z.feet = 100;
+        //z.inch = 100;
+        Console.WriteLine(z);
 
-        Console.WriteLine($"'a' = {a.Display()},\n'b' = {b.Display()},\n'a + b' = {c.Display()}");
-    }
+        Distance a = new Distance(IntCheck("Please enter value of distance 'a' in inches: "));
+        Distance b = new Distance(IntCheck("Please enter value of distance 'b' in inches: "));
+        Distance c = new Distance((a.feet * 12 + a.inch) + (b.feet * 12 + b.inch));
 
-    static int intCheck(string message)
-    {
-        Console.WriteLine(message);
-        var inputLine = Console.ReadLine();
-        int resutl;
-        while (!int.TryParse(inputLine, out resutl))
+        Console.WriteLine($"'a' = {a},\n'b' = {b},\n'a + b' = {c}");
+
+        int IntCheck(string message)
         {
-            Console.WriteLine("Invalid Input");
-            inputLine = Console.ReadLine();
+            Console.WriteLine(message);
+            var inputLine = Console.ReadLine();
+            int resutl;
+            while (!int.TryParse(inputLine, out resutl))
+            {
+                Console.WriteLine("Invalid Input");
+                inputLine = Console.ReadLine();
+            }
+            return resutl;
         }
-        return resutl;
     }
 }
