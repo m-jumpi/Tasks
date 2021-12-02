@@ -16,6 +16,7 @@ class Program
         public override string ToString() => $"{feet}' - {inch}\"";
 
     }
+
     public static void Main()
     {
         Distance a = new Distance(IntCheck("Please enter value of distance 'a' in inches: "));
